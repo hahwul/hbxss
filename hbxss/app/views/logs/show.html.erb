@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @log.key %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @log.url %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @log.ip %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @log.time %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

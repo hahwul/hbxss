@@ -1,0 +1,2 @@
+class Log < ApplicationRecord
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key: MyString
+  url: MyString
+  ip: 
+  time: 2017-11-10 18:45:37
+
+two:
+  key: MyString
+  url: MyString
+  ip: 
+  time: 2017-11-10 18:45:37
