@@ -1,0 +1,6 @@
+
+rake db:reset
+rake db:migrate
+
+rm -rf ./log/*
+

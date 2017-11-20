@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+<%=
+
+if (params[:key])
+	@log = Log.new
+	@log.key = params[:key].to_s
+	@log.url = params[:url].to_s
+	@log.referer = params[:referer].to_s
+	@log.ip = "Not support"#params[:key].to_s
+	@log.time = params[:time].to_s
+	@log.save
+	
+ end
+
+%>
+
   <div class="field">
     <%= form.label :key %>
     <%= form.text_field :key, id: :log_key %>
@@ -19,6 +34,11 @@
   <div class="field">
     <%= form.label :url %>
     <%= form.text_field :url, id: :log_url %>
+  </div>
+
+<div class="field">
+    <%= form.label :referer %>
+    <%= form.text_field :referer, id: :log_referer %>
   </div>
 
   <div class="field">
@@ -34,4 +54,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  
 <% end %>

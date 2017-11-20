@@ -61,6 +61,7 @@ class LogsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_log
@@ -69,6 +70,6 @@ class LogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def log_params
-      params.require(:log).permit(:key, :url, :ip, :time)
+      params.require(:log).permit(:key, :url, :ip, :time, :referer)
     end
 end
