@@ -9,6 +9,7 @@ Blind XSS Testing toolkit
      #> bundle install
 
 ### Run
+     #> rails db:migrate
      #> rails s
      ! Open browser http://127.0.0.1:3000
 
