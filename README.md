@@ -1,5 +1,7 @@
 <img src="https://user-images.githubusercontent.com/13212227/33077883-5a6c6386-cf14-11e7-9d5b-4ea45241afa4.png">
 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # hbxss
 Blind XSS Testing toolkit
 
